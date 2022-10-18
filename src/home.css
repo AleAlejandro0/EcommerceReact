@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Gelasio:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@400;600&display=swap');
+
+*{
+ margin: 0;
+}
+:root{
+ --main-font-family: 'Cinzel Decorative', cursive;
+ --second-font-family: 'Gelasio', serif;
+}
+body{
+ margin: 0;
+ padding: 0;
+}
+.App{
+ padding-top: 3.5rem;
+}
+/* -------- HEADER STYLE --------- */
+.header{ 
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ z-index: 50;
+ list-style-type: none;
+ font-family: var(--main-font-family);  
+ background-color: White;
+ height: 60px;
+ position: fixed;
+ width: 100vw;
+ top: 0;
+ border-bottom: 1px solid rgb(228, 202, 202);
+} 
+.header__list{
+ display: flex;
+ gap: 1rem;
+ list-style-type: none;
+}
+.header__logo{
+ color: black;
+ text-decoration: none;
+ padding-left: 1rem;
+}
+.header__nav{
+ padding-right: 1rem;
+}
+/* HEADER ICONS STYLE */
+.fa-solid, .fa-brands{
+ color: black;
+ transition: transform 200ms ease; 
+}
+.fa-solid:hover, .fa-brands:hover{
+ transform: scale(1.10);
+}
+
+/* -------- SEARCH AND FILTERS STYLE --------- */
+
+/* INPUT SEARCH STYLE */
+.input__container{
+ display: flex;
+ justify-content: center;
+ margin-top: 2rem;
+ height: 28px;
+}
+.input__seach{
+ text-align: center;
+ font-family: var(--second-font-family);
+ font-size: 18px;
+ height: 25px;
+ width: 150px;
+ border: none;
+ border-bottom: 1px solid black;
+}
+.input__seach:focus, .price__input:focus{
+ border: none;
+ outline: none;
+ border-bottom: 1px solid rgb(0, 204, 255);
+}
+/* FILTER SHOW MENU BUTTON */
+.home__filters-show{
+ border: none;
+ height: 28px;
+ padding: 5px;
+ font-family: var(--main-font-family);
+ background-color: black;
+ margin: 2rem;
+ margin-right: 2rem;
+ color: white;
+ float: right;
+ box-shadow: 2px 2px 8px rgb(129, 124, 124);
+ transition: all 200ms ease;
+}
+.home__filters-show:hover{
+ cursor: pointer;
+ transform: scale(1.1);
+}
+/* CLOSE FILTER MENU BUTTON */
+.home__filters-close{
+ width: 45px;
+ height: 45px;
+ position: absolute;
+ top: 0;
+ right: 0;
+ border: none;
+ background-color: transparent;
+}
+.fa-regular, .fa-circle-xmark{
+ font-size: 25px;
+ color: black;
+}
+.fa-regular:hover, .fa-circle-xmark:hover{
+ cursor: pointer;
+}
+/* FILTERS CATEGORY AND PRICE STYLE */
+.home__filters{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ z-index: 50;
+ gap: 2rem;
+ position: fixed;
+ width: 80%;
+ height: 100%;
+ right: 0;
+ top: 0;
+ background-color: white;
+ border-left: 1px solid rgb(228, 202, 202);
+}
+.home__filter__title{
+ font-size: 24px;
+ text-align: left;
+ font-family: var(--main-font-family);
+ font-weight: 700;
+ padding-left: 2rem; 
+ position: absolute;
+ top: 0;
+ margin-top: 2rem;
+}
+.category{
+ position: absolute;
+ top: 15%;
+ width: 100%;
+}
+.category__title, .price__title{
+ font-size: 20px;
+ font-family: var(--main-font-family);
+ padding-left: 2rem; 
+}
+.category__ul{
+ list-style: none;
+ margin-top: 1rem;
+ font-family: var(--second-font-family);
+ font-size: 18px;
+ color: #515151;
+ width: 100%;
+ padding-left: 3rem;
+}
+.category__li{
+ position: relative;
+ margin: 5px 5px;
+}
+.category__li:hover{ 
+ /*border-bottom: 1px solid black;*/
+ cursor: pointer;
+}
+.category__li::before{
+ content: '--';
+ border-bottom: 2px solid black ;
+ position: absolute;
+ bottom: -1px;
+ left: -2%;
+ width: 40%;
+}
+/* PRICE */
+.price__title{
+ margin-top: 5rem;
+}
+.price__ul{
+ list-style: none;
+ padding-left: 0;
+ padding-left: 3rem;
+ margin-top: 2rem;
+}
+.price__label{
+ font-size: 18px;
+ color: #515151;
+}
+.price__li2{
+ margin-top: 1rem;
+}
+.price__input{
+ margin-left: 1rem;
+ border: none;
+ padding: 5px;
+ border-bottom: 1px solid #515151;
+}
+.price__input2{
+ margin-left: 2.15rem;
+}
+/* BUTTON FILTER MENU  */
+.price__btn{
+ border: none;
+ height: 30px;
+ padding: 5px;
+ background-color: black;
+ color: white;
+ font-family: var(--main-font-family);
+ font-size: 15px;
+ margin-left: 2rem;
+ margin-top: 1.5rem;
+ box-shadow: 2px 2px 10px rgb(0, 0, 0);
+ transition: all 400ms ease;
+}
+.price__btn:hover{
+ cursor: pointer;
+ transform: scale(1.1);
+}
+
+/* -------- PRODUCTS CARTS STYLE --------- */
+
+.home__container-card{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-wrap: wrap;
+ width: 100vw;
+}
+.card-home{ 
+ width: 290px;
+ height: 450px;
+ margin: 0 1rem;
+ border: 1px solid #8b8484;
+ border-radius: 3%;
+ margin-bottom: 3rem;
+ position: relative;
+ box-shadow: 1px 1px 8px rgb(148, 133, 133);
+ transition: all 500ms ease;
+}
+.card-home:hover{
+ cursor: pointer;
+ transform: scale(.96);
+}
+.card-home__header{
+ display: flex;
+ justify-content: center;
+ padding: 1rem;
+ height: 250px;
+ border-radius: 3%;
+}
+img{
+ height: 100%;
+ width: 100%;
+ object-fit: contain;
+}
+.card-home__body{
+ font-family: var(--second-font-family);
+ font-size: 15px;
+ border-top: 1px solid #8b8484;
+ padding: 1rem;
+ background-color: aliceblue;
+ height: 135px;
+ border-radius: 5%;
+}
+.card-home__name{
+ margin-top: 1rem;
+}
+.card-home__price{
+ margin-top: 0.5rem;
+}
+.card-home__price-label{
+ color: #515151 
+}
+.card-home__price-value{
+ margin-left: 1rem;
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: 600;
+}
+.card-home__price-value::before{
+ content: "$ ";
+}
+.card-home__btn{
+ border: none;
+ border-radius: 50%;
+ height: 45px;
+ width: 45px;
+ position: absolute;
+ bottom: 1.5rem;
+ right: 2rem;
+ background-color: rgb(86, 195, 223);
+ transition: all 300ms ease;
+}
+.card-home__btn:hover{
+ cursor: pointer;
+ transform: scale(1.2);
+}
+.fa-sharp{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border: none;
+ color: black;
+ font-size: 20px;
+}
+/* FOOTER STYLE */
+.general__footer{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 150px;
+ background-color: black;
+}
+.copyright{
+ color: white;
+ font-size: 25px;
+}
+.linkedin-Icon{
+ margin-top: 1rem;
+ font-size: 40px;
+ color: white;
+}
+
+/* RESPONSIVE SECTIONS SYTLE */ 
+
+@media(min-width: 700px){
+ .header{
+  height: 70px;
+ }
+ .header__list{
+  margin-right: 2rem;
+ }
+ .fa-solid, .fa-brands{
+  font-size: 20px;
+ }
+ .input__container{
+  margin-top: 4rem;
+ }
+ .input__seach{
+  width: 250px;
+  font-size: 20px;
+ }
+ .home__filters{
+  margin-top: 4.4rem;
+  z-index: 25;
+ }
+ .home__filters-show {
+  height: 40px;
+  width: 70px;
+  font-size: 15px;
+ }
+ .home__container-card{
+    gap: 1rem;
+ }
+ .linkedin-Icon{
+  font-size: 40px;
+ }
+}
+@media(min-width: 1000px){
+ .card-home {
+  width: 350px;
+ }
+}
+@media(min-width: 400px){
+ .home__filters{
+  width: 300px;
+ }
+}
