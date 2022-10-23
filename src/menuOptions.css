@@ -90,9 +90,38 @@
 .login__btn:hover{
  cursor: pointer;
 }
-/* PURCHASES MENU OPTION */
-.purchase{
+/* LOGUE OUT STYLE */
+.logueOut{
+ height: 300px;
+ min-width: 200px;
+ border: 1px solid rgb(131, 123, 123);
+ padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ box-shadow: 1px 5px 10px rgb(124, 121, 121);
 }
+.logueOut__title{
+ font-family: var(--main-font-family);
+ font-size: 25px;
+}
+.logueOut__btn{
+ margin-top: .5rem;
+ border: none;
+ height: 30px;
+ padding: 10px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: var(--second-font-family);
+ background-color: black;
+ color: white;
+}
+.logueOut__btn:hover{
+ cursor: pointer;
+}
+/* PURCHASES MENU OPTION */
 .purchase__title{
  text-align: center;
  margin-top: 2rem;
@@ -148,7 +177,8 @@
  align-items: center;
  font-family: var(--main-font-family);
  margin: 3rem 1rem;
- height: 70vh;
+ height: calc(100vh - 100px );
+ overflow-y: scroll;
 }
 .cart__container-item{
  width: 80%;
@@ -167,6 +197,9 @@
 .cart__trash{
  font-size: 15px;
  margin-top: 2rem;
+}
+.cart__trash:hover{
+ cursor: pointer;
 }
 .cart__quantity{
  margin-left: .5rem;

@@ -1,9 +1,10 @@
 import React from 'react'
 
-const InputSearch = ({setInputSearch}) => {
+const InputSearch = ({setInputSearch, setFilterProduct}) => {
 
   const getInputValue = e => {
     setInputSearch(e.target.value.trim())
+    setFilterProduct(null)
   }
   
   return (

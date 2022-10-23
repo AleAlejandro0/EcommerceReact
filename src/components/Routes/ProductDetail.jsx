@@ -15,7 +15,7 @@ const ProductDetail = () => {
     axios.get(URL)
          .then(res => setProductInfo(res.data.data.product))
          .catch(err => console.log(err))
-  }, [])
+  }, [id])
 
   return (
   <div className='product__details-container'>

@@ -9,7 +9,6 @@ const CardHome = ({product}) => {
 
   const handleClick = () => {
     navigate(`/product/${product.id}`)
-    window.location.reload()
   }
 
   const handleAddCart = e => {

@@ -26,7 +26,6 @@ const ProductDescription = ({ productInfo }) => {
       .catch(err => console.log(err))
   }
 
-
   return (
     <section className='product-info'>
       <Carrousel

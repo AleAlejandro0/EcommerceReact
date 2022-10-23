@@ -6,7 +6,7 @@ import { useDispatch} from 'react-redux'
 import { getAllProducts, getProductByCategory } from '../../store/slices/products.slice'
 import getConfig from '../../utils/getConfig'
 
-const CategoryFilter = ({setFilterProduct}) => {
+const CategoryFilter = ({setFilterProduct, setEmpty}) => {
 
  const [itemCategory, setItemCategory ] = useState()
 
@@ -22,10 +22,12 @@ const CategoryFilter = ({setFilterProduct}) => {
  const categoryFilter = id => {
    dispatch(getProductByCategory(id)) 
    setFilterProduct(null)
+   setEmpty(false)
  }
 
  const requestAllProducts = () => {
    dispatch(getAllProducts())
+   setEmpty(false)
  }
 
   return (

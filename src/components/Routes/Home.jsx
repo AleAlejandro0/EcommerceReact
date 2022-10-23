@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import CardHome from '../Home/CardHome'
 import CategoryFilter from '../Home/CategoryFilter'
+import Empty from '../Home/Empty'
 import InputSearch from '../Home/InputSearch'
 import PriceFilter from '../Home/PriceFilter'
 
@@ -12,6 +13,19 @@ const Home = () => {
  const [filterProduct, setFilterProduct] = useState()
  const [filterByPrice, setFilterByPrice] = useState({})
  const [showFilters, setShowFilters] = useState(false)
+
+ /*IF THERE IS NOT SEARCH RESULTS*/ 
+ const[empty, setEmpty] = useState(false)
+
+ useEffect(() => {
+  if(filterProduct){
+    if(filterProduct.length == 0){
+      setEmpty(true)
+    }else{
+      setEmpty(false)
+    }
+  }
+ }, [filterProduct])
 
  const products =  useSelector(state => state.products)
  
@@ -24,7 +38,6 @@ const Home = () => {
     setFilterProduct(null)
   }
  }, [inputSearch])
-
  
  useEffect(() => {
 //IF FILTER BY PRICE VALUE IS SUBMITED  
@@ -51,12 +64,11 @@ const Home = () => {
  // FILTER SHOW - HIDE BUTTON 
  const tongleFilter = () => showFilters ? setShowFilters(false) : setShowFilters(true) 
 
- console.log(filterProduct)
-
   return (
     <div className='home'>
       <InputSearch
         setInputSearch={setInputSearch}
+        setFilterProduct={setFilterProduct}
       /> 
       {
        showFilters ?
@@ -65,6 +77,7 @@ const Home = () => {
          <span className='home__filter__title'>Filters:</span>
          <CategoryFilter
           setFilterProduct={setFilterProduct}
+          setEmpty={setEmpty}
          />
          <PriceFilter
            setFilterByPrice={setFilterByPrice}
@@ -77,22 +90,25 @@ const Home = () => {
 
       <div className='home__container-card'>
         {
-         filterProduct ? 
-          filterProduct.map(product => (
-            <CardHome
-             key={product.id}
-             product={product}
-            />
-          ))
-        : 
-         products?.map(product => (
-           <CardHome
-             key={product.id}
-             product={product}
-           />
-         ))
+          empty?
+            <Empty/>
+          :
+          filterProduct ? 
+            filterProduct.map(product => {
+              return <CardHome
+              key={product.id}
+              product={product}
+              />
+            })
+          : 
+            products?.map(product => (
+              <CardHome
+                key={product.id}
+                product={product}
+              />
+            ))
         }
-      </div>
+      </div> 
     </div>
   )
 }

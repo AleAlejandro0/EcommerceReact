@@ -14,7 +14,6 @@ const SimilarProducts = ({productInfo}) => {
    }
  }, [productInfo])
 
-
   return (
    <>
     <h3 className='similar__products-description'>Products you may be interested in:</h3>
