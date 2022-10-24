@@ -1,10 +1,14 @@
 import React from 'react'
+import { useDispatch} from 'react-redux'
+import { getAllProducts} from '../../store/slices/products.slice'
 
-const InputSearch = ({setInputSearch, setFilterProduct}) => {
+const InputSearch = ({setInputSearch}) => {
+
+  const dispatch = useDispatch()
 
   const getInputValue = e => {
+    dispatch(getAllProducts())
     setInputSearch(e.target.value.trim())
-    setFilterProduct(null)
   }
   
   return (

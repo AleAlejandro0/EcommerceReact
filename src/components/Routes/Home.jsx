@@ -68,7 +68,6 @@ const Home = () => {
     <div className='home'>
       <InputSearch
         setInputSearch={setInputSearch}
-        setFilterProduct={setFilterProduct}
       /> 
       {
        showFilters ?
