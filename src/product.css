@@ -25,7 +25,7 @@
 }
 .carrousel .img{
  background-color: white ;
- height: 80%;
+ height: 50%;
  object-fit: contain;
 }
 .carrousel .puntos{
@@ -134,7 +134,6 @@
 }
 
 /*RESPONSIVE SECTION*/
-
 @media(min-width: 800px){
  .product__details-container{
   display: flex;
@@ -155,6 +154,11 @@
  } 
  .carrousel_container{
   width: 50%;
+ }
+ .carrousel .img{
+  background-color: white ;
+  height: 80%;
+  object-fit: contain;
  }
  .product-description__container{
   width: 50%;
